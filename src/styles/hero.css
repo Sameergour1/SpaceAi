@@ -1,0 +1,99 @@
+/* hero.css */
+
+/* Entry animation */
+@keyframes fade-in-down {
+    0% {
+      opacity: 0;
+      transform: translateY(-40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Twinkling Stars Overlay */
+  .stars-layer {
+    background: repeating-radial-gradient(
+      circle at random(100%) random(100%),
+      rgba(255, 255, 255, 0.2) 0px,
+      transparent 1px
+    );
+    animation: twinkle 2.5s infinite alternate;
+    opacity: 0.15;
+    pointer-events: none;
+  }
+  
+  /* Twinkle effect */
+  @keyframes twinkle {
+    0% { opacity: 0.1; }
+    50% { opacity: 0.4; }
+    100% { opacity: 0.1; }
+  }
+  
+  /* Glowing Text Shadow */
+  .drop-shadow-glow {
+    filter: drop-shadow(0 0 10px #00ffff) drop-shadow(0 0 20px #8a2be2);
+  }
+  
+  /* Buttons */
+  .hero-btn {
+    @apply px-6 py-3 rounded-xl font-semibold shadow-lg transition-all duration-300;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Animations */
+  .animate-fade-in-down {
+    animation: fade-in-down 1s ease-out both;
+  }
+  
+  .animate-fade-in-up {
+    animation: fade-in-up 1.2s ease-out both;
+  }
+  /* Glowing frame behind the image */
+.glow-frame {
+    position: relative;
+    padding: 2px;
+    border-radius: 1rem;
+    background: linear-gradient(145deg, #ffffff20, #00000060);
+    box-shadow:
+      0 0 15px rgba(255, 255, 255, 0.2),
+      0 0 40px rgba(0, 0, 0, 0.6),
+      inset 0 0 10px rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Glowing animated ring effect */
+  .glow-ring {
+    border-radius: 1rem;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.8) 100%);
+    filter: blur(25px);
+    z-index: 0;
+    animation: pulse-glow 3s infinite ease-in-out;
+  }
+  
+  @keyframes pulse-glow {
+    0% {
+      opacity: 0.5;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.9;
+      transform: scale(1.05);
+    }
+    100% {
+      opacity: 0.5;
+      transform: scale(1);
+    }
+  }
+  
